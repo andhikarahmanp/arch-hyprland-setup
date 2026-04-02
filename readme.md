@@ -81,10 +81,10 @@ Setelah masuk TTY dan internet tersambung, jalankan:
 sudo pacman -S git
 
 # Clone dotfiles
-git clone https://github.com/username/dotfiles.git ~/dotfiles
+git clone https://github.com/andhikarahmanp/endeavouros-hyprland-setup.git ~/endeavouros-hyprland-setup
 
 # Masuk ke folder
-cd ~/dotfiles
+cd ~/endeavouros-hyprland-setup
 
 # Beri izin eksekusi
 chmod +x install.sh
