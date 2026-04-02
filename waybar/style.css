@@ -53,7 +53,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: linear-gradient(90deg, @accent1, @accent2);
+    background: @accent1;
     color: @text;
     border-radius: 8px;
     padding: 2px 12px;
