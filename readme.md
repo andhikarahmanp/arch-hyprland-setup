@@ -8,10 +8,21 @@
 1. [Referensi Warna](#1-referensi-warna)
 2. [Install EndeavourOS](#2-install-endeavouros)
 3. [Clone Repo & Jalanin install.sh](#3-clone-repo--jalanin-installsh)
-4. [Proses Manual Setelah install.sh](#4-proses-manual-setelah-installsh)
+4. [Proses Manual Setelah Masuk Hyprland](#4-proses-manual-setelah-masuk-hyprland)
 5. [Komponen Desktop](#5-komponen-desktop)
 6. [Struktur Config](#6-struktur-config)
-7. [Troubleshooting](#7-troubleshooting)
+7. [Testing](#7-testing)
+   - [7.1 Hyprland & Display](#71-hyprland--display)
+   - [7.2 Keybinding Dasar](#72-keybinding-dasar)
+   - [7.3 Waybar](#73-waybar)
+   - [7.4 Audio](#74-audio)
+   - [7.5 Notifikasi (Dunst)](#75-notifikasi-dunst)
+   - [7.6 Screenshot](#76-screenshot)
+   - [7.7 Clipboard](#77-clipboard)
+   - [7.8 Bluetooth & Network](#78-bluetooth--network)
+   - [7.9 GTK Theme & Tampilan](#79-gtk-theme--tampilan)
+   - [7.10 Lock Screen & Idle](#710-lock-screen--idle)
+8. [Troubleshooting](#8-troubleshooting)
 
 ---
 
@@ -70,10 +81,10 @@ Setelah masuk TTY dan internet tersambung, jalankan:
 sudo pacman -S git
 
 # Clone dotfiles
-git clone https://github.com/andhikarahmanp/endeavouros-hyprland-setup.git ~/endeavouros-hyprland-setup
+git clone https://github.com/username/dotfiles.git ~/dotfiles
 
 # Masuk ke folder
-cd ~/endeavouros-hyprland-setup
+cd ~/dotfiles
 
 # Beri izin eksekusi
 chmod +x install.sh
@@ -260,7 +271,144 @@ awww img ~/Pictures/Wallpapers/wallpaper.jpg --transition-type wipe --transition
 
 ---
 
-## 7. Troubleshooting
+## 7. Testing
+
+Jalankan semua test ini setelah setup selesai. Kalau ada yang gagal, langsung cek section 8 Troubleshooting.
+
+---
+
+### 7.1 Hyprland & Display
+
+| Test | Cara | Hasil yang diharapkan |
+|---|---|---|
+| Hyprland jalan | Lihat desktop | Wallpaper muncul, waybar tampil di atas |
+| Wallpaper | Lihat desktop | Wallpaper Shadow Dragon muncul |
+| Animasi window | Buka & tutup terminal | Ada animasi slide smooth |
+| Border aktif | Buka 2 window | Border gradient violet-magenta di window aktif |
+| Blur | Buka Rofi | Background blur terlihat |
+
+---
+
+### 7.2 Keybinding Dasar
+
+| Test | Shortcut | Hasil yang diharapkan |
+|---|---|---|
+| Buka terminal | `Super + Enter` | Kitty terbuka |
+| Buka launcher | `Super + Shift + Enter` | Rofi muncul |
+| Buka file manager | `Super + E` | Thunar terbuka |
+| Tutup window | `Super + Q` | Window tertutup |
+| Fullscreen | `Super + F` | Window fullscreen |
+| Toggle float | `Super + Shift + F` | Window jadi floating |
+| Pindah workspace | `Super + 2` | Pindah ke workspace 2 |
+| Pindah window | `Super + Shift + 2` | Window pindah ke workspace 2 |
+| Lock screen | `Super + Shift + L` | Hyprlock muncul |
+| Power menu | `Super + Shift + Q` | Wlogout muncul |
+
+---
+
+### 7.3 Waybar
+
+| Test | Cara | Hasil yang diharapkan |
+|---|---|---|
+| Waybar tampil | Lihat bar atas | Bar floating dengan modul lengkap |
+| Clock | Lihat tengah bar | Jam tampil format HH:MM |
+| Klik clock | Klik jam | Kalender popup muncul |
+| Workspace indicator | Buka app di beberapa workspace | Nomor workspace aktif ter-highlight |
+| Volume | Scroll di icon volume | Volume naik/turun |
+| Klik volume | Klik icon volume | Pavucontrol terbuka |
+| Brightness | Scroll di icon brightness | Brightness berubah |
+| Klik power | Klik icon ⏻ di kanan | Wlogout muncul |
+
+---
+
+### 7.4 Audio
+
+```bash
+# Test speaker
+speaker-test -t wav -c 2
+
+# Cek device terdeteksi
+pactl list sinks short
+```
+
+| Test | Cara | Hasil yang diharapkan |
+|---|---|---|
+| Speaker | Jalankan perintah di atas | Suara keluar dari speaker |
+| Volume key | Tekan tombol Vol+ / Vol- | Volume berubah, notif muncul |
+| Mute | Tekan tombol Mute | Audio mute, icon waybar berubah |
+
+---
+
+### 7.5 Notifikasi (Dunst)
+
+```bash
+# Test notifikasi manual
+notify-send "Test" "Notifikasi berfungsi!"
+notify-send -u critical "Critical" "Ini notifikasi penting!"
+```
+
+| Test | Hasil yang diharapkan |
+|---|---|
+| Notifikasi normal | Muncul di kanan atas, border violet |
+| Notifikasi critical | Muncul dengan border magenta, tidak auto-dismiss |
+| Klik notifikasi | Notifikasi hilang |
+
+---
+
+### 7.6 Screenshot
+
+| Test | Shortcut | Hasil yang diharapkan |
+|---|---|---|
+| Screenshot area | `Print` | Crosshair muncul, pilih area, Swappy terbuka |
+| Screenshot full | `Super + Print` | Swappy terbuka dengan screenshot fullscreen |
+| Screenshot ke clipboard | `Super + Shift + P` | Crosshair muncul, pilih area, tersimpan ke clipboard |
+
+---
+
+### 7.7 Clipboard
+
+```bash
+# Copy sesuatu dulu, lalu test
+```
+
+| Test | Shortcut | Hasil yang diharapkan |
+|---|---|---|
+| Clipboard history | `Super + V` | Rofi muncul dengan daftar history clipboard |
+
+---
+
+### 7.8 Bluetooth & Network
+
+| Test | Cara | Hasil yang diharapkan |
+|---|---|---|
+| Network indicator | Lihat waybar | Icon WiFi + nama SSID tampil |
+| Klik network | Klik icon network | nm-connection-editor terbuka |
+| Bluetooth | Klik icon bluetooth | Blueman terbuka |
+
+---
+
+### 7.9 GTK Theme & Tampilan
+
+| Test | Cara | Hasil yang diharapkan |
+|---|---|---|
+| Thunar theme | Buka Thunar | Tampilan dark, icon Papirus |
+| Cursor | Gerakin mouse | Cursor Bibata-Modern-Classic |
+| Pavucontrol theme | Buka pavucontrol | Tampilan dark |
+
+---
+
+### 7.10 Lock Screen & Idle
+
+| Test | Cara | Hasil yang diharapkan |
+|---|---|---|
+| Manual lock | `Super + Shift + L` | Hyprlock muncul, wallpaper blur |
+| Unlock | Ketik password + Enter | Kembali ke desktop |
+| Auto dim | Diamkan 5 menit | Brightness turun otomatis |
+| Auto lock | Diamkan 6 menit | Hyprlock aktif otomatis |
+
+---
+
+## 8. Troubleshooting
 
 ### Hyprland Tidak Start / Crash
 
