@@ -14,22 +14,38 @@
 
 ## 📋 DAFTAR ISI
 
-1. [Install EndeavourOS (No DE)](#1-install-endeavouros-no-de)
-2. [Post-Install: Update & Setup Dasar](#2-post-install-update--setup-dasar)
-3. [Install Hyprland & Wayland Stack](#3-install-hyprland--wayland-stack)
-4. [Install Semua Komponen Desktop](#4-install-semua-komponen-desktop)
-5. [Konfigurasi Hyprland](#5-konfigurasi-hyprland)
-6. [Konfigurasi Waybar](#6-konfigurasi-waybar)
-7. [Konfigurasi Dunst](#7-konfigurasi-dunst)
-8. [Konfigurasi Rofi](#8-konfigurasi-rofi)
-9. [Konfigurasi Kitty Terminal](#9-konfigurasi-kitty-terminal)
-10. [Konfigurasi SDDM](#10-konfigurasi-sddm)
-11. [Konfigurasi Thunar & File Manager](#11-konfigurasi-thunar--file-manager)
-12. [Komponen Tambahan (Power, Clipboard, Screenshot)](#12-komponen-tambahan)
-13. [GTK & Icon Theme](#13-gtk--icon-theme)
-14. [Wallpaper & Swww](#14-wallpaper--swww)
-15. [Fonts](#15-fonts)
-16. [Final Check & Troubleshooting](#16-final-check--troubleshooting)
+- [🐉 Shadow Dragon — Hyprland Setup Guide](#-shadow-dragon--hyprland-setup-guide)
+    - [EndeavourOS (No DE) · Intel iGPU · Full Custom Desktop](#endeavouros-no-de--intel-igpu--full-custom-desktop)
+  - [📋 DAFTAR ISI](#-daftar-isi)
+  - [1. Install EndeavourOS (No DE)](#1-install-endeavouros-no-de)
+    - [Saat Proses Instalasi:](#saat-proses-instalasi)
+  - [2. Post-Install: Update \& Setup Dasar](#2-post-install-update--setup-dasar)
+  - [3. Install Hyprland \& Wayland Stack](#3-install-hyprland--wayland-stack)
+  - [4. Install Semua Komponen Desktop](#4-install-semua-komponen-desktop)
+  - [5. Konfigurasi Hyprland](#5-konfigurasi-hyprland)
+  - [6. Konfigurasi Waybar](#6-konfigurasi-waybar)
+    - [`~/.config/waybar/config.jsonc`](#configwaybarconfigjsonc)
+    - [`~/.config/waybar/style.css`](#configwaybarstylecss)
+  - [7. Konfigurasi Dunst](#7-konfigurasi-dunst)
+  - [8. Konfigurasi Rofi](#8-konfigurasi-rofi)
+  - [9. Konfigurasi Kitty Terminal](#9-konfigurasi-kitty-terminal)
+  - [10. Konfigurasi SDDM](#10-konfigurasi-sddm)
+  - [11. Konfigurasi Thunar \& File Manager](#11-konfigurasi-thunar--file-manager)
+  - [12. Komponen Tambahan](#12-komponen-tambahan)
+    - [Hyprlock (Screen Locker)](#hyprlock-screen-locker)
+    - [Hypridle (Auto Lock)](#hypridle-auto-lock)
+    - [Wlogout (Power Menu)](#wlogout-power-menu)
+  - [13. GTK \& Icon Theme](#13-gtk--icon-theme)
+  - [14. Wallpaper \& Swww](#14-wallpaper--swww)
+  - [15. Fonts](#15-fonts)
+  - [16. Final Check \& Troubleshooting](#16-final-check--troubleshooting)
+    - [Masuk ke Hyprland Pertama Kali](#masuk-ke-hyprland-pertama-kali)
+    - [Jika Hyprland Crash / Tidak Start](#jika-hyprland-crash--tidak-start)
+    - [Cek Semua Service](#cek-semua-service)
+    - [Waybar Tidak Muncul](#waybar-tidak-muncul)
+    - [Screen Tearing (Intel iGPU)](#screen-tearing-intel-igpu)
+    - [Aplikasi Tidak Bisa Buka File (Portal Error)](#aplikasi-tidak-bisa-buka-file-portal-error)
+  - [⌨️ CHEAT SHEET KEYBINDING](#️-cheat-sheet-keybinding)
 
 ---
 
@@ -131,7 +147,7 @@ sudo pacman -S kitty
 sudo pacman -S thunar thunar-archive-plugin thunar-volman gvfs gvfs-mtp
 
 # === WALLPAPER DAEMON ===
-sudo pacman -S swww
+yay -S awww
 
 # === SCREENSHOT ===
 sudo pacman -S grim slurp swappy
@@ -385,8 +401,8 @@ mkdir -p ~/Pictures/Wallpapers
 cp /path/to/wallpaper.jpg ~/Pictures/Wallpapers/wallpaper.jpg
 
 # Test swww (jalankan setelah masuk Hyprland):
-swww-daemon &
-swww img ~/Pictures/Wallpapers/wallpaper.jpg \
+awww-daemon &
+awww img ~/Pictures/Wallpapers/wallpaper.jpg \
   --transition-type wipe \
   --transition-fps 60 \
   --transition-duration 1.5
