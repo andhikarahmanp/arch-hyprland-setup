@@ -116,7 +116,6 @@ PACMAN_PKGS=(
     dunst
     libnotify
     rofi-wayland
-    hypremoji
     sddm
     kitty
     thunar
