@@ -54,7 +54,7 @@ prompt {
     enabled:        true;
     background-color: transparent;
     text-color:     @accent2;
-    font:           "JetBrainsMono Nerd Font Bold 12";
+    font:           "DepartureMono Nerd Font Bold 12";
 }
 
 textbox-prompt-colon {
