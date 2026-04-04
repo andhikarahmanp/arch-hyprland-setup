@@ -342,7 +342,7 @@ yay -S --noconfirm --needed hypremoji
 # ============================================================
 
 echo -e "\n${PURPLE}╔══════════════════════════════════════════╗${NC}"
-echo -e "${PURPLE}║   Your Name Desktop — Setup Selesai! ║${NC}"
+echo -e "${PURPLE}║   Your Name Desktop — Setup Selesai!     ║${NC}"
 echo -e "${PURPLE}╚══════════════════════════════════════════╝${NC}\n"
 echo -e "${GREEN}Semua package terinstall dan config sudah di-copy.${NC}"
 echo -e "${YELLOW}Silakan reboot untuk masuk ke Hyprland via SDDM.${NC}\n"
