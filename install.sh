@@ -151,7 +151,6 @@ PACMAN_PKGS=(
     xdg-desktop-portal-gtk
     wget
     curl
-    neovim
     playerctl
     qt5ct
 )
@@ -161,6 +160,8 @@ sudo pacman -S --noconfirm "${PACMAN_PKGS[@]}"
 
 AUR_PKGS=(
     awww
+    neovim
+    google-chrome
     hyprlock
     wlogout
     papirus-icon-theme
