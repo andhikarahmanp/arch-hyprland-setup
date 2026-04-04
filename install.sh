@@ -154,6 +154,7 @@ PACMAN_PKGS=(
     playerctl
     qt5ct
     fastfetch
+    cmatrix
     file-roller
     gnome-font-viewer
     zip
