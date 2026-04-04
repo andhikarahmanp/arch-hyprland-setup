@@ -1,14 +1,14 @@
-/* ======= Shadow Dragon Theme — Waybar ======= */
+/* ======= Your Name (Kimi no Na wa) Theme — Waybar ======= */
 
-@define-color bg       #0a0b14;
-@define-color bg-alt   #111827;
-@define-color surface  #1e1b4b;
-@define-color overlay  #2d2b5e;
-@define-color accent1  #7c3aed;
-@define-color accent2  #d946ef;
-@define-color text     #e2e8f0;
-@define-color subtext  #94a3b8;
-@define-color red      #f43f5e;
+@define-color bg       #050a14;
+@define-color bg-alt   #0d1f3c;
+@define-color surface  #0f2744;
+@define-color overlay  #1a3a5c;
+@define-color accent1  #5bbfcf;
+@define-color accent2  #a78be0;
+@define-color text     #e8d5ff;
+@define-color subtext  #7de8f0;
+@define-color red      #c0392b;
 @define-color yellow   #eab308;
 @define-color green    #22c55e;
 
@@ -55,7 +55,7 @@ window#waybar {
 
 #workspaces button.active {
     background: @accent1;
-    color: @text;
+    color: @bg;
     border-radius: 8px;
     padding: 2px 12px;
 }
@@ -93,12 +93,12 @@ window#waybar {
     color: @text;
 }
 
-#cpu { color: #a78bfa; }
-#memory { color: #60a5fa; }
-#network { color: #34d399; }
-#pulseaudio { color: #f9a8d4; }
+#cpu { color: #c5a8f5; }
+#memory { color: #3a8fc7; }
+#network { color: #22c55e; }
+#pulseaudio { color: #7de8f0; }
 #backlight { color: @yellow; }
-#bluetooth { color: #60a5fa; }
+#bluetooth { color: #3a8fc7; }
 
 #battery {
     color: @green;
