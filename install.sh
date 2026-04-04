@@ -298,12 +298,20 @@ systemctl --user enable pipewire pipewire-pulse wireplumber 2>/dev/null || true
 success "PipeWire OK"
 
 # ============================================================
+# 10. AKTIFKAN SERVICE TLP
+# ============================================================
+section "Aktifkan TLP Service"
+info "Mematikan konflik service & mengaktifkan TLP..."
+# Mencegah konflik dengan power-profiles-daemon (bawaan GNOME/KDE/GDBus)
+sudo systemctl mask power-profiles-daemon.service > /dev/null 2>&1
+# Aktivasi TLP
+sudo systemctl enable tlp.service
+sudo systemctl start tlp.service
+success "Aktivasi TLP OK"
+
+# ============================================================
 # SELESAI
 # ============================================================
-
-# to do: add
-# sudo systemctl enable tlp.service
-# sudo systemctl start tlp.service
 
 echo -e "\n${PURPLE}╔══════════════════════════════════════════╗${NC}"
 echo -e "${PURPLE}║   Shadow Dragon Desktop — Setup Selesai! ║${NC}"
