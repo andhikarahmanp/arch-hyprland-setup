@@ -313,18 +313,29 @@ success "Aktivasi TLP OK"
 # ============================================================
 # 11. CLONE NVCHAD & AUTO-INSTALL PLUGINS
 # ============================================================
+section "Clone NvChad dan instalasi plugin"
 if [ ! -d "$HOME/.config/nvim" ]; then
-    echo "Cloning NvChad..."
+    info "Cloning NvChad..."
     git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1
 
-    echo "Installing plugins (Headless mode)..."
+    info "Installing plugins (Headless mode)..."
     # Menjalankan nvim tanpa UI, sync plugin, lalu quit
     nvim --headless "+Lazy! sync" +qa
     
-    echo "NvChad setup complete!"
+    info "NvChad setup complete!"
 else
-    echo "Directory ~/.config/nvim already exists. Skipping."
+    info "Directory ~/.config/nvim already exists. Skipping."
 fi
+
+# ============================================================
+# 12. INSTALL HYPREMOJI (YAY)
+# ============================================================
+section "Instalasi HyprEmoji"
+info "Installing Hypremoji..."
+
+# --noconfirm: Skip semua pertanyaan dan pilih opsi default
+# --needed: Jangan install ulang kalau aplikasinya sudah ada
+yay -S --noconfirm --needed hypremoji
 
 # ============================================================
 # SELESAI
