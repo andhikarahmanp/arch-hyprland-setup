@@ -311,6 +311,22 @@ sudo systemctl start tlp.service
 success "Aktivasi TLP OK"
 
 # ============================================================
+# 11. CLONE NVCHAD & AUTO-INSTALL PLUGINS
+# ============================================================
+if [ ! -d "$HOME/.config/nvim" ]; then
+    echo "Cloning NvChad..."
+    git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1
+
+    echo "Installing plugins (Headless mode)..."
+    # Menjalankan nvim tanpa UI, sync plugin, lalu quit
+    nvim --headless "+Lazy! sync" +qa
+    
+    echo "NvChad setup complete!"
+else
+    echo "Directory ~/.config/nvim already exists. Skipping."
+fi
+
+# ============================================================
 # SELESAI
 # ============================================================
 
