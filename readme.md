@@ -1,4 +1,4 @@
-# 🐉 Shadow Dragon — Hyprland Setup Guide
+# 🌠 Your Name — Hyprland Setup Guide
 ### Arch Linux (Base Install) · Intel iGPU · Full Custom Desktop
 
 ---
@@ -28,17 +28,17 @@
 
 ## 1. Referensi Warna
 
-Tema **Shadow Dragon** diambil dari wallpaper — dark navy dengan aksen violet dan magenta.
+Tema **Your Name** terinspirasi dari wallpaper film *Kimi no Na wa* — langit malam deep navy dengan komet berwarna cyan dan ungu melintasi awan.
 
 | Peran | Hex | Keterangan |
 |---|---|---|
-| Background | `#0a0b14` | Near black navy |
-| Primary | `#1e1b4b` | Deep indigo |
-| Surface | `#2d2b5e` | Overlay/surface |
-| Accent 1 | `#7c3aed` | Violet/purple |
-| Accent 2 | `#d946ef` | Magenta/fuchsia |
-| Text | `#e2e8f0` | Soft white |
-| Subtext | `#94a3b8` | Muted slate |
+| Background | `#050a14` | Near-black night sky |
+| Primary | `#0f2744` | Deep midnight blue |
+| Surface | `#1a3a5c` | Cloud blue dark |
+| Accent 1 | `#5bbfcf` | Comet cyan |
+| Accent 2 | `#a78be0` | Comet purple |
+| Text | `#e8d5ff` | Star white lavender |
+| Subtext | `#7de8f0` | Bright cyan glow |
 
 ---
 
@@ -86,7 +86,7 @@ Isi pilihan berikut di menu archinstall:
 | **Filesystem** | `ext4` atau `btrfs` |
 | **Bootloader** | `systemd-boot` (UEFI) atau `grub` |
 | **Swap** | True (otomatis buat swapfile) |
-| **Hostname** | Terserah, misal `shadow-dragon` |
+| **Hostname** | Terserah, misal `yourname` |
 | **Root password** | Set password root |
 | **User account** | Buat user baru, **centang sudo** |
 | **Profile** | **Minimal** — jangan pilih desktop environment apapun |
@@ -123,10 +123,10 @@ Setelah internet tersambung dari TTY, jalankan:
 
 ```bash
 # Clone dotfiles
-git clone https://github.com/andhikarahmanp/arch-hyprland-setup.git ~/shadow-dragon-setup
+git clone https://github.com/andhikarahmanp/arch-hyprland-setup.git ~/yourname-setup
 
 # Masuk ke folder
-cd ~/shadow-dragon-setup
+cd ~/yourname-setup
 
 # Beri izin eksekusi
 chmod +x install.sh
@@ -201,10 +201,10 @@ nwg-look
 Window manager utama berbasis Wayland. Config ada di `~/.config/hypr/hyprland.conf`.
 
 - **Tiling layout:** Dwindle (otomatis tile window secara spiral)
-- **Border:** Gradient violet → magenta, 2px
+- **Border:** Gradient comet cyan → comet purple, 2px
 - **Gaps:** 4px dalam, 10px luar
 - **Blur:** Enabled, 8 size, 2 passes
-- **Shadow:** Warna violet `rgba(7c3aed66)`
+- **Shadow:** Warna comet cyan `rgba(5bbfcf66)`
 - **Animasi:** Bezier curve `dragon` — smooth dengan slight overshoot
 
 ### Waybar
@@ -219,9 +219,9 @@ Status bar di bagian atas. Config ada di `~/.config/waybar/`.
 Notification daemon. Config ada di `~/.config/dunst/dunstrc`.
 
 - **Posisi:** Top-right, offset 12x50
-- **Urgency low:** Border indigo
-- **Urgency normal:** Border violet
-- **Urgency critical:** Border magenta, tidak auto-dismiss
+- **Urgency low:** Border midnight blue
+- **Urgency normal:** Border comet cyan
+- **Urgency critical:** Border comet purple, tidak auto-dismiss
 
 ### Rofi
 App launcher. Config ada di `~/.config/rofi/`.
@@ -326,9 +326,9 @@ Jalankan semua test ini setelah setup selesai. Kalau ada yang gagal, langsung ce
 | Test | Cara | Hasil yang diharapkan |
 |---|---|---|
 | Hyprland jalan | Lihat desktop | Wallpaper muncul, waybar tampil di atas |
-| Wallpaper | Lihat desktop | Wallpaper Shadow Dragon muncul |
+| Wallpaper | Lihat desktop | Wallpaper Your Name muncul |
 | Animasi window | Buka & tutup terminal | Ada animasi slide smooth |
-| Border aktif | Buka 2 window | Border gradient violet-magenta di window aktif |
+| Border aktif | Buka 2 window | Border gradient cyan-purple di window aktif |
 | Blur | Buka Rofi | Background blur terlihat |
 
 ### 7.2 Keybinding Dasar
@@ -385,8 +385,8 @@ notify-send -u critical "Critical" "Ini notifikasi penting!"
 
 | Test | Hasil yang diharapkan |
 |---|---|
-| Notifikasi normal | Muncul di kanan atas, border violet |
-| Notifikasi critical | Muncul dengan border magenta, tidak auto-dismiss |
+| Notifikasi normal | Muncul di kanan atas, border comet cyan |
+| Notifikasi critical | Muncul dengan border comet purple, tidak auto-dismiss |
 | Klik notifikasi | Notifikasi hilang |
 
 ### 7.6 Screenshot
@@ -498,5 +498,5 @@ Referensi lengkap: [Arch Wiki — Hibernation](https://wiki.archlinux.org/title/
 
 ---
 
-> 🐉 **Shadow Dragon Desktop** — Built with Arch Linux + Hyprland  
-> Designed for power, elegance, and speed.
+> 🌠 **Your Name Desktop** — Built with Arch Linux + Hyprland  
+> Inspired by the night sky of *Kimi no Na wa*.
