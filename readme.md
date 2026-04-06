@@ -263,7 +263,7 @@ Power menu. Config ada di `~/.config/wlogout/`.
 > ⚠️ **Hibernate** membutuhkan konfigurasi swap tambahan. Lihat [Arch Wiki: Hibernation](https://wiki.archlinux.org/title/Hibernation).
 
 ### SDDM
-Login manager dengan tema **corners**.
+Login manager dengan tema **silent**.
 
 - Config ada di `/etc/sddm.conf.d/10-hyprland.conf`
 - Session: Hyprland (otomatis terpilih)
