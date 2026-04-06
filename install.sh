@@ -313,7 +313,7 @@ success "Wallpapers OK"
 # 7. SETUP SDDM
 # ============================================================
 section "Setup SDDM"
-info "Konfigurasi SDDM theme corners..."
+info "Konfigurasi SDDM theme silent..."
 sudo mkdir -p /etc/sddm.conf.d
 sudo bash -c 'cat > /etc/sddm.conf.d/10-hyprland.conf <<EOF
 [Theme]
