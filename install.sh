@@ -217,6 +217,7 @@ AUR_PKGS=(
     papirus-icon-theme
     bibata-cursor-theme
     sddm-theme-corners-git
+    sddm-silent-theme
     otf-departure-mono-nerd
 )
 
